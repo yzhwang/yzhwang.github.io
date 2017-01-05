@@ -1,0 +1,20 @@
+dissertation structure:
+
+	-programming model:
+	graph processing programming model based on BSP. Why it is essential
+for doing graph processing on the GPU?
+
+	-algorithms:
+	show how data-centric model can be applied to a variety of graph
+algorithms.
+
+	-operators:
+	show how operators enable more algorithms while providing the same
+level of performance.	
+
+	-implementation/architecture:
+	Load-balancing strategy and memory-related optimization.
+
+=====================
+
+Good introduction and motivation matter a lot.
