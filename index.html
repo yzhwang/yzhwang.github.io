@@ -14,41 +14,29 @@
 <body>
 <div class="header">
     <script type="x-shader/x-vertex" id="vertexshader">
-    attribute float size;
-    attribute vec3 customColor;
-    varying vec3 vColor;
-
-    void main() {
-      vColor = customColor;
-      vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-      gl_PointSize = size * ( 300.0 / -mvPosition.z );
-      gl_Position = projectionMatrix * mvPosition;
-    }
+  attribute float size;
+  attribute vec3 customColor;
+  varying vec3 vColor;
+  void main() {
+    vColor = customColor;
+    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+    gl_PointSize = size * (300.0 / -mvPosition.z);
+    gl_Position  = projectionMatrix * mvPosition;
+  }
   </script>
+
   <script type="x-shader/x-fragment" id="fragmentshader">
-    uniform vec3 color;
-    uniform sampler2D pointTexture;
-    varying vec3 vColor;
-
-    void main() {
-      gl_FragColor = vec4( color * vColor, 1.0 );
-      gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
-    }
+  uniform vec3 color;
+  uniform sampler2D pointTexture;
+  varying vec3 vColor;
+  void main() {
+    gl_FragColor = vec4( color * vColor, 1.0 );
+    gl_FragColor *= texture2D( pointTexture, gl_PointCoord );
+  }
   </script>
 
-  <div id="magic"></div>
-
-  <div class="playground">
-    <div class="bottomPosition">
-      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278.8 278.8">
-        <circle fill="#000205" cx="139.4" cy="139.4" r="139.4"/>
-        <g fill="none" stroke="#FFF" stroke-width="6.062" stroke-miterlimit="10">
-          <path d="M214 183.4l-74.6 43.1-75.5-43.6V95.8l75.5-43.5 75.4 43.5v59.8l-11.3 6.5z"/>
-          <path d="M139.4 226.5l-18.8-38.2 18.8 10.8 75.4-43.5M63.9 95.8l75.3 43.6 75.6-43.6M139.2 139.4v59.7"/>
-        </g>
-      </svg>
-    </div>
-  </div>
+  <!-- this is where Three.js will insert its <canvas> -->
+  <div id="magic" style="width:100%; height:300px;"></div>
         <h2> <div id="email" style="display:inline;">
 		  <noscript><i>Please enable Javascript to view</i></noscript>
 		</div> | <a href="https://github.com/yzhwang">github</a> | <a href="https://www.linkedin.com/pub/yangzihao-wang/16/289/1a1">linkedin</a></h2>
@@ -356,7 +344,73 @@ Last updated <script language="JavaScript">
 </script>.
 
 </p>
+<!-- 1) include Three.js -->
+<script src="https://unpkg.com/three@0.150.0/build/three.min.js"></script>
 
+<script>
+  // 2) basic setup
+  const container = document.getElementById('magic');
+  const scene     = new THREE.Scene();
+  const camera    = new THREE.PerspectiveCamera( 60, container.clientWidth / container.clientHeight, 1, 1000 );
+  camera.position.z = 200;
+  const renderer  = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize( container.clientWidth, container.clientHeight );
+  container.appendChild( renderer.domElement );
+
+  // 3) create a particle system so you see something
+  const count     = 500;
+  const geometry  = new THREE.BufferGeometry();
+  const positions = new Float32Array( count * 3 );
+  const sizes     = new Float32Array( count );
+  const colors    = new Float32Array( count * 3 );
+
+  for ( let i = 0; i < count; i++ ) {
+    // random position in a cube
+    positions[3*i]   = ( Math.random() - 0.5 ) * 400;
+    positions[3*i+1] = ( Math.random() - 0.5 ) * 400;
+    positions[3*i+2] = ( Math.random() - 0.5 ) * 400;
+    // size varying 5–20
+    sizes[i] = 5 + Math.random() * 15;
+    // random color
+    colors[3*i]   = Math.random();
+    colors[3*i+1] = Math.random();
+    colors[3*i+2] = Math.random();
+  }
+
+  geometry.setAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+  geometry.setAttribute( 'size',     new THREE.BufferAttribute( sizes, 1 ) );
+  geometry.setAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
+
+  // 4) build the ShaderMaterial using your <script> tags
+  const material = new THREE.ShaderMaterial({
+    vertexShader:   document.getElementById('vertexshader').textContent,
+    fragmentShader: document.getElementById('fragmentshader').textContent,
+    uniforms: {
+      color:        { value: new THREE.Color(0xffffff) },
+      pointTexture: { value: new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/disc.png') }
+    },
+    transparent: true
+  });
+
+  // 5) assemble Points and add to scene
+  const particles = new THREE.Points( geometry, material );
+  scene.add( particles );
+
+  // 6) animate loop
+  function animate() {
+    requestAnimationFrame( animate );
+    particles.rotation.y += 0.002;
+    renderer.render( scene, camera );
+  }
+  animate();
+
+  // 7) handle resizing
+  window.addEventListener('resize', () => {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( container.clientWidth, container.clientHeight );
+  });
+</script>
 </body>
 <script>
 		emailScramble = new scrambledString(document.getElementById('email'),
