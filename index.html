@@ -1,109 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 
 <head>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" /><title>Yangzihao Wang - Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>Yangzihao Wang - Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="pure-min.css">
 <link rel="stylesheet" href="pure.css">
-	<title>YZH</title>
-	<script src="scramble.js"></script>
-
+<link rel="stylesheet" href="style.css">
+<script src="scramble.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-<style>
-    html, body {
-        background-color: #121212;
-        color: #cccccc; 
-        font-family: 'Roboto', sans-serif;
-    }
-
-    a {
-        color: #8ab4f8;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-
-    h2, h3 {
-        color: #ffffff;
-    }
-    
-    #magic {
-        position: absolute;
-        width: 100%;
-        height: 100%; 
-        display: block;
-        top: 0;
-        left: 0;
-        z-index: 1;
-    }
-
-    .header {
-        height: 240px; 
-        position: relative; 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        background-color: #1a1a1a;
-        border-bottom: 1px solid #333;
-        padding-bottom: 10px;
-        box-sizing: border-box;
-    }
-    
-    .header h2 {
-        position: relative;
-        z-index: 2;
-        margin: 0;
-        color: #a0a0a0;
-    }
-
-    .header h2 a {
-        color: #e0e0e0;
-        font-weight: bold;
-    }
-    
-    .pure-menu-link {
-        color: #e0e0e0;
-    }
-</style>
 </head>
 
-<body>
+<body id="Top">
 
 <div class="header">
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <div id="magic"></div>
-    <h2> 
-      <div id="email" style="display:inline;">
-        <noscript><i>Please enable Javascript to view</i></noscript>
-      </div> | <a href="https://github.com/yzhwang">github</a> | <a href="https://www.linkedin.com/pub/yangzihao-wang/16/289/1a1">linkedin</a>
-    </h2>
+    <div class="header-links">
+      <span id="email"><noscript><i>Please enable Javascript to view</i></noscript></span>
+      <span class="separator">&middot;</span>
+      <a href="https://github.com/yzhwang">github</a>
+      <span class="separator">&middot;</span>
+      <a href="https://www.linkedin.com/pub/yangzihao-wang/16/289/1a1">linkedin</a>
+      <span class="separator">&middot;</span>
+      <a href="https://scholar.google.com/citations?user=pgqVEEYAAAAJ&hl=en">scholar</a>
+      <span class="separator">&middot;</span>
+      <a href="https://infectiouswaste.github.io/">writings</a>
+    </div>
 </div>
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
     <div class="pure-u-3-5">
-        <div class="pure-menu pure-menu-open pure-menu-horizontal">
-            <ul class="rainbow-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="yzhwang_cv.pdf">CV</a></li>
-                <li><a href="#Project">Projects</a></li>
-                <li><a href="#Dissertation">Dissertation</a></li>
-                <li><a href="#Publications">Publications</a></li>
-                <li><a href="#Talks">Talks</a></li>
-            </ul>
-        </div>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="yzhwang_cv.pdf">CV</a>
+            <a href="#Project">Projects</a>
+            <a href="#Dissertation">Dissertation</a>
+            <a href="#Publications">Publications</a>
+            <a href="#Talks">Talks</a>
+        </nav>
     </div>
     <div class="pure-u-1-5"></div>
 </div>
+
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-        <img style="float:left;padding:20px 10px 0px 0px;" src="images/profile.png" width="230px" height="262px"/>
-        <p> I co-founded <a href="https://stax.fun">Stax</a>. Previously I was a founding member and research engineer at <a href="http://sail.sea.com">Sea AI Lab</a> working on AI system and neural graphics. From 2018 to 2021 I worked as a senior software engineer at WeChat on infrastructure for high-performance graph computing, graph representation learning systems and large-scale recommender system and worked as a senior research engineer at Tencent on AI plaform and AutoML for reinforcement learning. From 2017 to 2018 I worked as a software engineer at Google Brain’s TensorFlow team on distributed training and performance engineering. I have published on conferences such as NeurIPS, SIGIR, PPoPP, and IPDPS.
+    <div class="pure-u-3-5 content-area">
+        <img class="profile-img" src="images/profile.png" width="230" alt="Yangzihao Wang">
+        <p> I co-founded <a href="https://stax.fun">Stax</a>. Previously I was a founding member and research engineer at <a href="http://sail.sea.com">Sea AI Lab</a> working on AI system and neural graphics. From 2018 to 2021 I worked as a senior software engineer at WeChat on infrastructure for high-performance graph computing, graph representation learning systems and large-scale recommender system and worked as a senior research engineer at Tencent on AI plaform and AutoML for reinforcement learning. From 2017 to 2018 I worked as a software engineer at Google Brain's TensorFlow team on distributed training and performance engineering. I have published on conferences such as NeurIPS, SIGIR, PPoPP, and IPDPS.
         </p>
 
         <p> I graduated with a Ph.D. in computer science from UC Davis in 2016. During my PhD years, I worked with <a href="https://www.ece.ucdavis.edu/~jowens/">Prof. John Owens</a> on various research topics including: 1) structure of parallelism and locality in irregular algorithms such as graph algorithms on the GPU; 2) parallel programming model for graph analytics; and 3) large-scale graph processing and data analysis system. I also did internships at AMD Research, DARPA, and Google.</p>
@@ -118,210 +72,206 @@
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-        <h2><a name=Project></a>Projects<a href="#Top">[^]</a></h2>
+    <div class="pure-u-3-5 content-area">
+        <h2 class="section-heading" id="Project">Projects <a class="back-to-top" href="#Top">top</a></h2>
     </div>
     <div class="pure-u-1-5"></div>
 </div>
 
 <div class="pure-g">
   <div class="pure-u-1-5"></div>
-  <div class="pure-u-3-5">
-    <iframe
-    src="tixy.html"
-    style="
-      width: 400px;               
-      height: 400px;              
-      border: none;
-    "
-  >
-    </iframe>
-
-    <p>
-      <b>Stax:</b> <a href="https://stax.fun">Stax</a>, World's first AI-native block coding platform for young innovators.
-    </p>
-    <br><br>
+  <div class="pure-u-3-5 content-area">
+    <div class="project-item project-item-stax">
+        <div class="tixy-wrapper">
+            <iframe src="tixy.html" scrolling="no"></iframe>
+        </div>
+        <p><b>Stax:</b> <a href="https://stax.fun">Stax</a>, World's first AI-native block coding platform for young innovators.</p>
+    </div>
   </div>
   <div class="pure-u-1-5"></div>
 </div>
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-
-        <img style="float:left; padding: 20px 20px 0px 0px" src="images/hloenv.png" width="120px" height="120px"/>
-        <p><b>HloEnv:</b>Compiler optimization should be re-defined using deep learning. This is the first step towards this goal. An environment based on XLA for deep learning compiler optimization research. It's on <a href="https://github.com/sail-sg/hloenv">github</a> too.
-	</p>
-        <br><br>
-</div>
-    <div class="pure-u-1-5"></div>
-</div>
-
-<div class="pure-g">
-    <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-
-        <img style="float:left; padding: 20px 20px 0px 0px" src="images/plato.jpg" width="120px" height="120px"/>
-        <p><b>Plato:</b>A framework for distributed graph computation and machine learning at WeChat scale. It's on <a href="https://github.com/Tencent/plato">github</a>.
-	Stay tuned! More graph computing projects at WeChat/Tencent to be open-sourced!
-	</p>
-        <br><br>
-</div>
-    <div class="pure-u-1-5"></div>
-</div>
-
-<div class="pure-g">
-    <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-
-        <img style="float:left; padding: 20px 20px 0px 0px" src="images/gpugraph.png" width="120px" height="120px"/>
-        <p><b>Gunrock:</b>Fastest graph processing library on the GPU. The library is on <a href="http://gunrock.github.io">github</a>.</p>
-        <br><br>
-</div>
-    <div class="pure-u-1-5"></div>
-</div>
-
-<div class="pure-g">
-    <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-
-        <img style="float:left; padding:20px 20px 0px 0px" src="images/mushroom.png" width="120px" height="120px"/>
-        <p><b>CUDA Depixelizer:</b> A de-pixelization algorithm on GPU to vectorize a pixel art into a vector graph based on <a href="http://research.microsoft.com/en-us/um/people/kopf/pixelart/">this paper</a>. Source code can be found on <a href="https://github.com/yzhwang/depixelization">github</a>.</p>
-	<br><br>
-</div>
-    <div class="pure-u-1-5"></div>
-</div>
-
-<div class="pure-g">
-    <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-        <img style="float:left; padding:20px 20px 0px 0px" src="images/zhua.png" width="120px" height="120px"/>
-        <p><b>Zhua:</b> A forum crawler using Python Scrapy. My first practical Python project so far. Made with love for my lovely wife on her research topic which focuses on using data analysis and communication theory to help depressed patients. Source code can be found on <a href="https://github.com/yzhwang/zhua">github</a>.</p>
+    <div class="pure-u-3-5 content-area">
+        <div class="project-item">
+            <img src="images/hloenv.png" alt="HloEnv">
+            <p><b>HloEnv:</b> Compiler optimization should be re-defined using deep learning. This is the first step towards this goal. An environment based on XLA for deep learning compiler optimization research. It's on <a href="https://github.com/sail-sg/hloenv">github</a> too.</p>
+        </div>
     </div>
     <div class="pure-u-1-5"></div>
 </div>
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-        <h2><a name=Dissertation></a>Dissertation<a href="#Top">[^]</a></h2>
+    <div class="pure-u-3-5 content-area">
+        <div class="project-item">
+            <img src="images/plato.jpg" alt="Plato">
+            <p><b>Plato:</b> A framework for distributed graph computation and machine learning at WeChat scale. It's on <a href="https://github.com/Tencent/plato">github</a>.
+	Stay tuned! More graph computing projects at WeChat/Tencent to be open-sourced!</p>
+        </div>
     </div>
     <div class="pure-u-1-5"></div>
 </div>
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
+    <div class="pure-u-3-5 content-area">
+        <div class="project-item">
+            <img src="images/gpugraph.png" alt="Gunrock">
+            <p><b>Gunrock:</b> Fastest graph processing library on the GPU. The library is on <a href="http://gunrock.github.io">github</a>.</p>
+        </div>
+    </div>
+    <div class="pure-u-1-5"></div>
+</div>
 
-        <img style="float:left; padding: 20px 20px 0px 0px" src="images/dis.png" width="120px" height="120px"/>
-        <p><a href="dissertation.pdf"><b>Gunrock: A Programming Model and Implementation for Graph Analytics on
+<div class="pure-g">
+    <div class="pure-u-1-5"></div>
+    <div class="pure-u-3-5 content-area">
+        <div class="project-item">
+            <img src="images/mushroom.png" alt="CUDA Depixelizer">
+            <p><b>CUDA Depixelizer:</b> A de-pixelization algorithm on GPU to vectorize a pixel art into a vector graph based on <a href="http://research.microsoft.com/en-us/um/people/kopf/pixelart/">this paper</a>. Source code can be found on <a href="https://github.com/yzhwang/depixelization">github</a>.</p>
+        </div>
+    </div>
+    <div class="pure-u-1-5"></div>
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1-5"></div>
+    <div class="pure-u-3-5 content-area">
+        <div class="project-item">
+            <img src="images/zhua.png" alt="Zhua">
+            <p><b>Zhua:</b> A forum crawler using Python Scrapy. My first practical Python project so far. Made with love for my lovely wife on her research topic which focuses on using data analysis and communication theory to help depressed patients. Source code can be found on <a href="https://github.com/yzhwang/zhua">github</a>.</p>
+        </div>
+    </div>
+    <div class="pure-u-1-5"></div>
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1-5"></div>
+    <div class="pure-u-3-5 content-area">
+        <h2 class="section-heading" id="Dissertation">Dissertation <a class="back-to-top" href="#Top">top</a></h2>
+    </div>
+    <div class="pure-u-1-5"></div>
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1-5"></div>
+    <div class="pure-u-3-5 content-area">
+        <div class="project-item">
+            <img src="images/dis.png" alt="Dissertation">
+            <p><a href="dissertation.pdf"><b>Gunrock: A Programming Model and Implementation for Graph Analytics on
             Graphics Processing Units</b></a>.</p>
-        <br><br>
-</div>
+        </div>
+    </div>
     <div class="pure-u-1-5"></div>
 </div>
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-        <h2><a name=Publications></a>Publications<a href="#Top">[^]</a></h2>
+    <div class="pure-u-3-5 content-area">
+        <h2 class="section-heading" id="Publications">Publications <a class="back-to-top" href="#Top">top</a></h2>
 
-<p><font color="yellow">Peer-Reviewed Papers:</font></p>
+<div class="pub-list">
+
+<p><span class="pub-category">Peer-Reviewed Papers</span></p>
 
 <p> <a name="Oh:2022:HAG"> </a>Oh Chin-Yang, Kunhao Zheng, Bingyi Kang, Xinyi Wan, Zhongwen Xu, Shuicheng Yan, Min Lin, <b>Yangzihao Wang</b> <b>HloEnv: A Graph Rewrite Environment for Deep
-Learning Compiler Optimization Research</b>. Accepted by Workshop on ML for Systems at NeurIPS 2022, Dec 2022. [ <a href="http://mlforsystems.org/assets/papers/neurips2022/paper14.pdf">pdf</a> ]</p>
+Learning Compiler Optimization Research</b>. Accepted by Workshop on ML for Systems at NeurIPS 2022, Dec 2022. [ <a href="http://mlforsystems.org/assets/papers/neurips2022/paper14.pdf">pdf</a> ]</p>
 
-<p> <a name="Rong:2019:DES"> </a>Haidong Rong, <b>Yangzihao Wang</b>, Feihu Zhou, Junjie Zhai, Haiyang Wu, Rui Lan, Fan Li, Han Zhang, Yuekui Yang, Zhenyu Guo, Di Wang <b>Distributed Equivalent Substitution Training for Large-Scale Recommender Systems</b>. Accepted by Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'20), Jul 2020. [ <a href="https://dl.acm.org/doi/pdf/10.1145/3397271.3401113">DOI</a> | <a href="https://sigir-schedule.baai.ac.cn/poster/fp0082">talk</a> ]</p>
+<p> <a name="Rong:2019:DES"> </a>Haidong Rong, <b>Yangzihao Wang</b>, Feihu Zhou, Junjie Zhai, Haiyang Wu, Rui Lan, Fan Li, Han Zhang, Yuekui Yang, Zhenyu Guo, Di Wang <b>Distributed Equivalent Substitution Training for Large-Scale Recommender Systems</b>. Accepted by Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'20), Jul 2020. [ <a href="https://dl.acm.org/doi/pdf/10.1145/3397271.3401113">DOI</a> | <a href="https://sigir-schedule.baai.ac.cn/poster/fp0082">talk</a> ]</p>
 
-<p>Xianyan Jia, Shutao Song, Wei He, <b>Yangzihao Wang</b>, Haidong Rong, Feihu Zhou, Liqiang Xie, Zhenyu Guo, Yuanzhou Yang, Liwei Yu, Tiegang Chen, Guangxiao Hu, Shaohuai Shi, Xiaowen Chu. <b>Highly Scalable Deep Learning Training System with Mixed-Precision: Training ImageNet in Four Minutes</b>. Workshop on Systems for ML and Open Source Software at NeurIPS 2018, December 2018.[ <a href="http://learningsys.org/nips18/assets/papers/20CameraReadySubmissionTraining_ImageNet_in_4_minutes___NeuraIPS_2018_workshop_submission.pdf">http</a> ]</p>
+<p>Xianyan Jia, Shutao Song, Wei He, <b>Yangzihao Wang</b>, Haidong Rong, Feihu Zhou, Liqiang Xie, Zhenyu Guo, Yuanzhou Yang, Liwei Yu, Tiegang Chen, Guangxiao Hu, Shaohuai Shi, Xiaowen Chu. <b>Highly Scalable Deep Learning Training System with Mixed-Precision: Training ImageNet in Four Minutes</b>. Workshop on Systems for ML and Open Source Software at NeurIPS 2018, December 2018.[ <a href="http://learningsys.org/nips18/assets/papers/20CameraReadySubmissionTraining_ImageNet_in_4_minutes___NeuraIPS_2018_workshop_submission.pdf">http</a> ]</p>
 
-<p><a name="Pan:2017:MGA"></a>Yuechao Pan, <b>Yangzihao Wang</b>, Yuduo Wu, Carl Yang, and John D. Owens. <b>Multi-GPU Graph Anlytics</b>. In Proceedings of the 31st IEEE International Parallel and Distributed Processing Symposium, IPDPS 2017, May/June 2017. [ <a href="yzh_bib.html#Pan:2017:MGA">bib</a> | <a href="http://escholarship.org/uc/item/39r145g1">http</a> ]</p>
+<p><a name="Pan:2017:MGA"></a>Yuechao Pan, <b>Yangzihao Wang</b>, Yuduo Wu, Carl Yang, and John D. Owens. <b>Multi-GPU Graph Anlytics</b>. In Proceedings of the 31st IEEE International Parallel and Distributed Processing Symposium, IPDPS 2017, May/June 2017. [ <a href="yzh_bib.html#Pan:2017:MGA">bib</a> | <a href="http://escholarship.org/uc/item/39r145g1">http</a> ]</p>
 
-<p><a name="Wang:2017:MAL"></a><b>Yangzihao Wang</b>, Sean Baxter, John D. Owens. <b>Mini-Gunrock: A Lightweight Graph Analytics Framework on the GPU</b>. In Graph Algorithms Building Blocks, GABB 2017, May 2017. [ <a href="yzh_bib.html#Wang:2017:MAL">bib</a> | <a href="https://escholarship.org/uc/item/5wm061tr">http</a> ]</p>
+<p><a name="Wang:2017:MAL"></a><b>Yangzihao Wang</b>, Sean Baxter, John D. Owens. <b>Mini-Gunrock: A Lightweight Graph Analytics Framework on the GPU</b>. In Graph Algorithms Building Blocks, GABB 2017, May 2017. [ <a href="yzh_bib.html#Wang:2017:MAL">bib</a> | <a href="https://escholarship.org/uc/item/5wm061tr">http</a> ]</p>
 
-<p><a name="Wang:2016:ACS"></a> Leyuan Wang, <b>Yangzihao Wang</b>, Carl Yang, and John D. Owens. <b>A Comparative Study on Exact Triangle Counting on the GPU.</b> In Proceedings of the 1st High Performance Graph Processing Workshop, HPGP'16, May 2016. [ <a href="yzh_bib.html#Wang:2016:ACS">bib</a> | <a href="http://dx.doi.org/10.1145/2915516.2915521">DOI</a> | <a href="http://www.escholarship.org/uc/item/9hf0m6w3">http</a> ]</p>
+<p><a name="Wang:2016:ACS"></a> Leyuan Wang, <b>Yangzihao Wang</b>, Carl Yang, and John D. Owens. <b>A Comparative Study on Exact Triangle Counting on the GPU.</b> In Proceedings of the 1st High Performance Graph Processing Workshop, HPGP'16, May 2016. [ <a href="yzh_bib.html#Wang:2016:ACS">bib</a> | <a href="http://dx.doi.org/10.1145/2915516.2915521">DOI</a> | <a href="http://www.escholarship.org/uc/item/9hf0m6w3">http</a> ]</p>
 <p><a name="Wang:2016:GAH"></a> <b>Yangzihao Wang</b>, Andrew Davidson, Yuechao Pan, Yuduo Wu, Andy Riffel, and
-  John D. Owens.
+  John D. Owens.
  <b>Gunrock: A high-performance graph processing library on the GPU.</b>
  In <em>Proceedings of the 21th ACM SIGPLAN Symposium on Principles
-  and Practice of Parallel Programming</em>, PPoPP 2016, March 2016, <b>Distinguished Paper Award</b> [ <a href="yzh_bib.html#Wang:2016:GAH">bib</a> | <a href="http://dx.doi.org/10.1145/2851141.2851145">DOI</a> | <a href="http://escholarship.org/uc/item/6xz7z9k0">http</a> ]
-<p><a name="Wu:2015:PCF"></a> Yuduo Wu, <b>Yangzihao Wang</b>, Yuechao Pan, Carl Yang, and John D. Owens. <b>Performance Characterization for High-Level Programming Models for GPU Graph Analytics</b>. In <em>IEEE International Symposium on Workload Characterization</em>, IISWC2015, October 2015
-[ <a href="yzh_bib.html#Wu:2015:PCF">bib</a> | <a href="http://escholarship.org/uc/item/2t69m5ht">http</a> ]</p>
+  and Practice of Parallel Programming</em>, PPoPP 2016, March 2016, <b>Distinguished Paper Award</b> [ <a href="yzh_bib.html#Wang:2016:GAH">bib</a> | <a href="http://dx.doi.org/10.1145/2851141.2851145">DOI</a> | <a href="http://escholarship.org/uc/item/6xz7z9k0">http</a> ]
+<p><a name="Wu:2015:PCF"></a> Yuduo Wu, <b>Yangzihao Wang</b>, Yuechao Pan, Carl Yang, and John D. Owens. <b>Performance Characterization for High-Level Programming Models for GPU Graph Analytics</b>. In <em>IEEE International Symposium on Workload Characterization</em>, IISWC2015, October 2015
+[ <a href="yzh_bib.html#Wu:2015:PCF">bib</a> | <a href="http://escholarship.org/uc/item/2t69m5ht">http</a> ]</p>
 
-<p><a name="Yang:2015:FSM"></a> Carl Yang, <b>Yangzihao Wang</b>, and John D. Owens.
+<p><a name="Yang:2015:FSM"></a> Carl Yang, <b>Yangzihao Wang</b>, and John D. Owens.
  <b>Fast Sparse Matrix and Sparse Vector Multiplication Algorithm on the GPU.</b>
  To appear in <em> IPDPS Graph Algorithms Building Blocks Workshop 2015</em>, GABB 2015
-[ <a href="yzh_bib.html#Yang:2015:FSM">bib</a> |
-<a href="https://escholarship.org/uc/item/1rq9t3j3">http</a> ]</p>
+[ <a href="yzh_bib.html#Yang:2015:FSM">bib</a> |
+<a href="https://escholarship.org/uc/item/1rq9t3j3">http</a> ]</p>
 
- <p><a name="Geil:2014:WGC"></a> Afton Geil, <b>Yangzihao Wang</b>, and John D. Owens.
+ <p><a name="Geil:2014:WGC"></a> Afton Geil, <b>Yangzihao Wang</b>, and John D. Owens.
  <b>WTF, GPU! computing twitter's who-to-follow on the GPU.</b>
  In <em>Proceedings of the Second ACM Conference on Online Social
   Networks</em>, COSN '14, pages 63-68, New York, NY, USA, 2014. ACM.
-[ <a href="yzh_bib.html#Geil:2014:WGC">bib</a> |
-<a href="http://dx.doi.org/10.1145/2660460.2660481">DOI</a> |
-<a href="http://doi.acm.org/10.1145/2660460.2660481">http</a> ]</p>
+[ <a href="yzh_bib.html#Geil:2014:WGC">bib</a> |
+<a href="http://dx.doi.org/10.1145/2660460.2660481">DOI</a> |
+<a href="http://doi.acm.org/10.1145/2660460.2660481">http</a> ]</p>
 
-<p><font color="yellow">Non-Peer-Reviewed Papers:</font></p>
+<p><span class="pub-category">Non-Peer-Reviewed Papers</span></p>
 	    <p> <a name="Wei:2020:ADM"> </a>Wanjing Wei, <b>Yangzihao Wang</b>, Pin Gao, Shijie Sun, Haidong Yu <b>A Distributed Multi-GPU System for Large-Scale Node Embedding at Tencent</b><em>CoRR</em>, /abs/2005.13789, Jun 2020.
-[ <a href="https://arxiv.org/abs/2005.13789">arXiv</a> ]</p>
+[ <a href="https://arxiv.org/abs/2005.13789">arXiv</a> ]</p>
 	    <p> <a name="Rong:2019:DES"> </a>Haidong Rong, <b>Yangzihao Wang</b>, Feihu Zhou, Junjie Zhai, Haiyang Wu, Rui Lan, Fan Li, Han Zhang, Yuekui Yang, Zhenyu Guo, Di Wang <b>Distributed Equivalent Substitution Training for Large-Scale Recommender Systems</b><em>CoRR</em>, /abs/1909.04823, Sept 2019.
-[ <a href="https://arxiv.org/abs/1909.04823">arXiv</a> ]</p>
-	    
+[ <a href="https://arxiv.org/abs/1909.04823">arXiv</a> ]</p>
+
 	    <p> <a name="Jia:2018:HSD"> </a>Xianyan Jia, Shutao Song, Wei He, <b>Yangzihao Wang</b>, Haidong Rong, Feihu Zhou, Liqiang Xie, Zhenyu Guo, Yuanzhou Yang, Liwei Yu, Tiegang Chen, Guangxiao Hu, Shaohuai Shi, Xiaowen Chu<b>Highly Scalable Deep Learning Training System with Mixed-Precision: Training ImageNet in Four Minutes</b><em>CoRR</em>, abs/1807.11205(1807.11205v1), July 2018.
-[ <a href="yzh_bib.html#Jia:2018:HSD">bib</a> |
-<a href="http://arxiv.org/abs/1807.11205">arXiv</a> ]</p>
-	    
+[ <a href="yzh_bib.html#Jia:2018:HSD">bib</a> |
+<a href="http://arxiv.org/abs/1807.11205">arXiv</a> ]</p>
+
 <p> <a name="Wang:2017:GGG"> </a><b>Yangzihao Wang</b>, Yuechao Pan, Andrew Davidson, Yuduo Wu, Carl Yang, Leyuan Wang, Muhammad Osama, Chenshan Yuan, Weitang Liu, Andy T. Riffel, and John D. Owens.<b>Gunrock: GPU Graph Analytics.</b><em>CoRR</em>, abs/1701.01170(1701.01170v1), January 2017.
-[ <a href="yzh_bib.html#Wang:2017:GGG">bib</a> |
-<a href="http://arxiv.org/abs/1701.01170">arXiv</a> ]</p>
+[ <a href="yzh_bib.html#Wang:2017:GGG">bib</a> |
+<a href="http://arxiv.org/abs/1701.01170">arXiv</a> ]</p>
 
 <p> <a name="Pan:2015:MGA"> </a> Yuechao Pan, <b>Yangzihao Wang</b>, Yuduo Wu, Carl Yang, and
-  John D. Owens.
+  John D. Owens.
  <b>Multi-GPU Graph Analytics.</b>
  <em>CoRR</em>, abs/1504.04804(1504.04804v1), April 2015.
-[ <a href="yzh_bib.html#Pan:2015:MGA">bib</a> |
-<a href="http://arxiv.org/abs/1504.04804">arXiv</a> ]</p>
+[ <a href="yzh_bib.html#Pan:2015:MGA">bib</a> |
+<a href="http://arxiv.org/abs/1504.04804">arXiv</a> ]</p>
 
 <p><a name="Wang:2015:GAH"> </a> <b>Yangzihao Wang</b>, Andrew Davidson, Yuechao Pan, Yuduo Wu, Andy Riffel, and
-  John D. Owens.
+  John D. Owens.
  <b>Gunrock: A high-performance graph processing library on the GPU.</b>
  <em>CoRR</em>, abs/1501.05387(1501.05387v6), March 2015.
-[ <a href="yzh_bib.html#Wang:2015:GAH">bib</a> |
-<a href="http://arxiv.org/abs/1501.05387v6">arXiv</a> ]</p>
+[ <a href="yzh_bib.html#Wang:2015:GAH">bib</a> |
+<a href="http://arxiv.org/abs/1501.05387v6">arXiv</a> ]</p>
 
 <p><a name="Wang:2015:SCD"></a><b>Yangzihao Wang</b>, Yuduo Wu
 <b>Scene Classification with Deep Convolutional Neural Networks.</b>
 Tech Report, Dec 2015.
-[ <a href="ecs289h-vision.pdf">http</a> ]
+[ <a href="ecs289h-vision.pdf">http</a> ]
 </p>
 
-<p><b>Yangzihao Wang</b> and John D. Owens. <b>Large-Scale Graph Processing Algorithms on the GPU</b> Technical Report, January 2013.[<a href="gpugraph.pdf">pdf</a> ]</p>
+<p><b>Yangzihao Wang</b> and John D. Owens. <b>Large-Scale Graph Processing Algorithms on the GPU</b> Technical Report, January 2013.[<a href="gpugraph.pdf">pdf</a> ]</p>
 
 
-<p><font color="yellow">Posters:</font></p>
-<p><a name="Wang:2016:FPS"></a> Leyuan Wang, <b>Yangzihao Wang</b>, John D. Owens. <b>Fast Parallel Subgraph Matching on the GPU</b> In Proceedings of the 1st High Performance Graph Processing Workshop, HPGP'16, May 2016. [ <a href="http://www.hpdc.org/2016/posters/poster/O13-HPDC16_Posters_paper_17.pdf">poster</a> ]</p>
+<p><span class="pub-category">Posters</span></p>
+<p><a name="Wang:2016:FPS"></a> Leyuan Wang, <b>Yangzihao Wang</b>, John D. Owens. <b>Fast Parallel Subgraph Matching on the GPU</b> In Proceedings of the 1st High Performance Graph Processing Workshop, HPGP'16, May 2016. [ <a href="http://www.hpdc.org/2016/posters/poster/O13-HPDC16_Posters_paper_17.pdf">poster</a> ]</p>
 
 <p><a name="Wang:2015:GAHP"></a> <b>Yangzihao Wang</b>, Andrew Davidson, Yuechao Pan, Yuduo Wu, Andy Riffel, and
-  John D. Owens.
+  John D. Owens.
  <b>Gunrock: A high-performance graph processing library on the GPU.</b>
  In <em>Proceedings of the 20th ACM SIGPLAN Symposium on Principles
   and Practice of Parallel Programming</em>, PPoPP 2015, pages 265-266, New York,
   NY, USA, 2015. ACM.
-[ <a href="yzh_bib.html#Wang:2015:GAHP">bib</a> |
-<a href="http://dx.doi.org/10.1145/2688500.2688538">DOI</a> |
-<a href="gunrock_poster.pdf">poster</a> ]</p>
+[ <a href="yzh_bib.html#Wang:2015:GAHP">bib</a> |
+<a href="http://dx.doi.org/10.1145/2688500.2688538">DOI</a> |
+<a href="gunrock_poster.pdf">poster</a> ]</p>
 
 <p> <a name="Pan:2015:MGA"> </a> Yuechao Pan, <b>Yangzihao Wang</b>, Yuduo Wu, Carl Yang, and
-  John D. Owens.
+  John D. Owens.
  <b>Multi-GPU Graph Analytics.</b> Supercomputing 2015.
-[ <a href="SC2015-poster.pdf">poster</a> ]</p>
+[ <a href="SC2015-poster.pdf">poster</a> ]</p>
 
 <p><a name="Wang:2015:GAHP"></a> <b>Yangzihao Wang</b>, Andrew Davidson, Yuechao Pan, Yuduo Wu, Andy Riffel, and
-  John D. Owens.
+  John D. Owens.
  <b>Gunrock: A high-performance graph processing library on the GPU.</b>
  In <em>Proceedings of the 24th International Conference on Parallel Architectures and Compilation Techniques</em>, PACT 2015.
-[ <a href="pact-poster.pdf">poster</a> ]</p>
+[ <a href="pact-poster.pdf">poster</a> ]</p>
+
+</div>
 
     </div>
     <div class="pure-u-1-5"></div>
@@ -329,15 +279,15 @@ Tech Report, Dec 2015.
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
-        <h2><a name=Talks></a>Talks<a href="#Top">[^]</a></h2>
+    <div class="pure-u-3-5 content-area">
+        <h2 class="section-heading" id="Talks">Talks <a class="back-to-top" href="#Top">top</a></h2>
     </div>
     <div class="pure-u-1-5"></div>
 </div>
 
 <div class="pure-g">
     <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
+    <div class="pure-u-3-5 content-area talks-list">
 	<b>Training ImageNet in Four Minutes</b>
 	<br>GPU Technology Conference Silicon Valley, March 2019 <a href="https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9146-training-imagenet-in-four-minutes.pdf">slides</a> | <a href="https://developer.nvidia.com/gtc/2019/video/S9146">video</a></br>
 	<b>Gunrock: A Fast and Programmable Multi-GPU Graph Processing Library</b>
@@ -350,39 +300,11 @@ Tech Report, Dec 2015.
     </div>
     <div class="pure-u-1-5"></div>
 </div>
-<p align="center"><font color="#555555"><i>Scientists discover the world that exists, engineers create the world that never was.
--Theodore von Kármán</i></font></p>
 
-<script type="text/javascript">
-var sc_project=10031330;
-var sc_invisible=0;
-var sc_security="caaf81d7";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="click tracking"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="http://c.statcounter.com/10031330/0/caaf81d7/0/"
-alt="click tracking"></a></div></noscript>
-<p>
-
-Yangzihao Wang |
-
-Last updated <script language="JavaScript">
-
-<!--
-
-	document.write(document.lastModified);
-
-// -->
-
-</script>.
-
-</p>
+<footer class="site-footer">
+    <p class="footer-quote">Scientists discover the world that exists; engineers create the world that never was. &mdash; Theodore von K&aacute;rm&aacute;n</p>
+    <p class="footer-credit">Yangzihao Wang</p>
+</footer>
 
 <script type="x-shader/x-vertex" id="vertexshader">
   attribute float size;
@@ -409,9 +331,32 @@ Last updated <script language="JavaScript">
 </script>
 
 <script>
+    var particleSystem = null;
+
+    function getThemeParticleConfig() {
+        var theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            return {
+                base:     { h: 0.53, s: 0.70, l: 0.55 },
+                hover:    { h: 0.85, s: 1.00, l: 0.55 },
+                hoverFar: { h: 0.08, s: 1.00, l: 0.55 },
+                clickSat: 1.0,  clickLit: 0.55,
+                blending: THREE.AdditiveBlending
+            };
+        } else {
+            return {
+                base:     { h: 0.55, s: 0.08, l: 0.45 },
+                hover:    { h: 0.50, s: 0.20, l: 0.40 },
+                hoverFar: { h: 0.50, s: 0.15, l: 0.38 },
+                clickSat: 0.22, clickLit: 0.42,
+                blending: THREE.NormalBlending
+            };
+        }
+    }
+
     const preload = () => {
         let manager = new THREE.LoadingManager();
-        manager.onLoad = function() { 
+        manager.onLoad = function() {
             const environment = new Environment( typo, particle );
         }
 
@@ -424,11 +369,11 @@ Last updated <script language="JavaScript">
     if ( document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
         preload();
     } else {
-        document.addEventListener("DOMContentLoaded", preload ); 
+        document.addEventListener("DOMContentLoaded", preload );
     }
 
     class Environment {
-        constructor( font, particle ){ 
+        constructor( font, particle ){
             this.font = font;
             this.particle = particle;
             this.container = document.querySelector( '#magic' );
@@ -443,8 +388,9 @@ Last updated <script language="JavaScript">
             window.addEventListener( 'resize', this.onWindowResize.bind( this ));
         }
 
-        setup(){ 
+        setup(){
             this.createParticles = new CreateParticles( this.scene, this.font, this.particle, this.camera, this.renderer );
+            particleSystem = this.createParticles;
         }
 
         render() {
@@ -482,12 +428,13 @@ Last updated <script language="JavaScript">
             this.particleImg = particleImg;
             this.camera = camera;
             this.renderer = renderer;
-            
+
             this.raycaster = new THREE.Raycaster();
             this.mouse = new THREE.Vector2(-200, 200);
-            
+
             this.colorChange = new THREE.Color();
             this.buttom = false;
+            this.themeConfig = getThemeParticleConfig();
 
             this.data = {
                 text: 'Yangzihao Wang, Ph.D.',
@@ -515,13 +462,22 @@ Last updated <script language="JavaScript">
             document.addEventListener( 'mousedown', this.onMouseDown.bind( this ));
             document.addEventListener( 'mousemove', this.onMouseMove.bind( this ));
             document.addEventListener( 'mouseup', this.onMouseUp.bind( this ));
+            document.addEventListener( 'themechange', this.onThemeChange.bind( this ));
+        }
+
+        onThemeChange() {
+            this.themeConfig = getThemeParticleConfig();
+            if (this.particleMaterial) {
+                this.particleMaterial.blending = this.themeConfig.blending;
+                this.particleMaterial.needsUpdate = true;
+            }
         }
 
         onMouseDown(event){
             const rect = this.renderer.domElement.getBoundingClientRect();
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
-            
+
             this.mouse.x = (x / rect.width) * 2 - 1;
             this.mouse.y = -(y / rect.height) * 2 + 1;
 
@@ -530,7 +486,7 @@ Last updated <script language="JavaScript">
             const dir = vector.sub( this.camera.position ).normalize();
             const distance = - this.camera.position.z / dir.z;
             this.currenPosition = this.camera.position.clone().add( dir.multiplyScalar( distance ) );
-            
+
             const pos = this.particles.geometry.attributes.position;
             this.buttom = true;
             this.data.ease = .01;
@@ -541,7 +497,7 @@ Last updated <script language="JavaScript">
             this.data.ease = .05;
         }
 
-        onMouseMove(event) { 
+        onMouseMove(event) {
             const rect = this.renderer.domElement.getBoundingClientRect();
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
@@ -550,7 +506,7 @@ Last updated <script language="JavaScript">
             this.mouse.y = -(y / rect.height) * 2 + 1;
         }
 
-        render( level ){ 
+        render( level ){
             const time = ((.001 * performance.now())%12)/12;
             const zigzagTime = (1 + (Math.sin( time * 2 * Math.PI )))/6;
 
@@ -562,6 +518,8 @@ Last updated <script language="JavaScript">
             const coulors = this.particles.geometry.attributes.customColor;
             const size = this.particles.geometry.attributes.size;
 
+            const tc = this.themeConfig;
+
             for ( var i = 0, l = pos.count; i < l; i++) {
                 const initX = copy.getX(i);
                 const initY = copy.getY(i);
@@ -571,12 +529,10 @@ Last updated <script language="JavaScript">
                 let py = pos.getY(i);
                 let pz = pos.getZ(i);
 
-                // Set default color and size
-                this.colorChange.setHSL( .6, .6 , .75 );
+                this.colorChange.setHSL( tc.base.h, tc.base.s, tc.base.l );
                 coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b );
                 size.array[ i ]  = this.data.particleSize;
 
-                // This block now only runs for mouse interaction
                 if ( intersects.length > 0 ) {
                     const mx = intersects[ 0 ].point.x;
                     const my = intersects[ 0 ].point.y;
@@ -590,16 +546,16 @@ Last updated <script language="JavaScript">
                     let d = ( dx = mx - px ) * dx + ( dy = my - py ) * dy;
                     const f = - this.data.area/d;
 
-                    if( this.buttom ){ 
+                    if( this.buttom ){
                         const t = Math.atan2( dy, dx );
                         px -= f * Math.cos( t );
                         py -= f * Math.sin( t );
 
-                        this.colorChange.setHSL( .5 + zigzagTime, 1.0 , .5 );
+                        this.colorChange.setHSL( .5 + zigzagTime, tc.clickSat, tc.clickLit );
                         coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b );
 
                         if ((px > (initX + 70)) || ( px < (initX - 70)) || (py > (initY + 70) || ( py < (initY - 70)))){
-                            this.colorChange.setHSL( .15, 1.0 , .5 );
+                            this.colorChange.setHSL( tc.hoverFar.h, tc.hoverFar.s, tc.hoverFar.l );
                             coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b );
                         }
                     } else {
@@ -609,7 +565,7 @@ Last updated <script language="JavaScript">
                                 px -= .03 * Math.cos( t );
                                 py -= .03 * Math.sin( t );
 
-                                this.colorChange.setHSL( .15 , 1.0 , .5 );
+                                this.colorChange.setHSL( tc.hover.h, tc.hover.s, tc.hover.l );
                                 coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b );
                                 size.array[ i ]  =  this.data.particleSize /1.2;
                             } else {
@@ -620,15 +576,14 @@ Last updated <script language="JavaScript">
                             }
 
                             if ((px > (initX + 10)) || ( px < (initX - 10)) || (py > (initY + 10) || ( py < (initY - 10)))){
-                                this.colorChange.setHSL( .15, 1.0 , .5 );
+                                this.colorChange.setHSL( tc.hoverFar.h, tc.hoverFar.s, tc.hoverFar.l );
                                 coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b );
                                 size.array[ i ]  = this.data.particleSize /1.8;
                             }
                         }
                     }
                 }
-                
-                // This part now runs every frame, regardless of mouse position
+
                 px += ( initX  - px ) * this.data.ease;
                 py += ( initY  - py ) * this.data.ease;
                 pz += ( initZ  - pz ) * this.data.ease;
@@ -640,12 +595,12 @@ Last updated <script language="JavaScript">
             pos.needsUpdate = true;
         }
 
-        createText(){ 
+        createText(){
             let thePoints = [];
             let shapes = this.font.generateShapes( this.data.text , this.data.textSize  );
             let geometry = new THREE.ShapeGeometry( shapes );
             geometry.computeBoundingBox();
-        
+
             const xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
             const yMid =  (geometry.boundingBox.max.y - geometry.boundingBox.min.y)/2.85;
 
@@ -665,7 +620,7 @@ Last updated <script language="JavaScript">
 
             let colors = [];
             let sizes = [];
-                    
+
             for ( let  x = 0; x < shapes.length; x ++ ) {
                 let shape = shapes[ x ];
                 const amountPoints = ( shape.type == 'Path') ? this.data.amount/2 : this.data.amount;
@@ -686,16 +641,17 @@ Last updated <script language="JavaScript">
 
             const material = new THREE.ShaderMaterial( {
                 uniforms: {
-                    color: { value: new THREE.Color( 0x00ff00 ) },
+                    color: { value: new THREE.Color( 0xffffff ) },
                     pointTexture: { value: this.particleImg }
                 },
                 vertexShader: document.getElementById( 'vertexshader' ).textContent,
                 fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
-                blending: THREE.AdditiveBlending,
+                blending: this.themeConfig.blending,
                 depthTest: false,
                 transparent: true,
             } );
 
+            this.particleMaterial = material;
             this.particles = new THREE.Points( geoParticles, material );
             this.scene.add( this.particles );
             this.geometryCopy = new THREE.BufferGeometry();
@@ -706,7 +662,7 @@ Last updated <script language="JavaScript">
             const cameraOffset = camera.position.z;
             if ( depth < cameraOffset ) depth -= cameraOffset;
             else depth += cameraOffset;
-            const vFOV = camera.fov * Math.PI / 180; 
+            const vFOV = camera.fov * Math.PI / 180;
             return 2 * Math.tan( vFOV / 2 ) * Math.abs( depth );
         }
 
@@ -721,11 +677,12 @@ Last updated <script language="JavaScript">
     }
 </script>
 
-</body>
-<script>
-		emailScramble = new scrambledString(document.getElementById('email'),
-		    'emailScramble', 'p@iagirhais.smtlmlosc',
-		    [7,12,16,3,13,8,9,5,15,10,1,18,6,21,11,2,14,17,20,4,19]);
-	</script>
-</html>
+<script src="theme.js"></script>
 
+<script>
+    emailScramble = new scrambledString(document.getElementById('email'),
+        'emailScramble', 'p@iagirhais.smtlmlosc',
+        [7,12,16,3,13,8,9,5,15,10,1,18,6,21,11,2,14,17,20,4,19]);
+</script>
+</body>
+</html>
