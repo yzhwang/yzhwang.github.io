@@ -379,7 +379,7 @@ Tech Report, Dec 2015.
             this.container = document.querySelector( '#magic' );
             this.scene = new THREE.Scene();
             this.createCamera();
-            this.createRenderer();
+            if ( !this.createRenderer() ) return;
             this.setup();
             this.bindEvents();
         }
@@ -404,12 +404,19 @@ Tech Report, Dec 2015.
         }
 
         createRenderer() {
-            this.renderer = new THREE.WebGLRenderer({ alpha: true });
+            try {
+                this.renderer = new THREE.WebGLRenderer({ alpha: true });
+            } catch ( e ) {
+                console.warn( 'WebGL unavailable, showing static header fallback:', e );
+                this.container.innerHTML = '<span class="header-fallback">Yangzihao Wang, Ph.D.</span>';
+                return false;
+            }
             this.renderer.setSize( this.container.clientWidth, this.container.clientHeight );
             this.renderer.setPixelRatio( Math.min( window.devicePixelRatio, 2));
             this.renderer.outputEncoding = THREE.sRGBEncoding;
             this.container.appendChild( this.renderer.domElement );
             this.renderer.setAnimationLoop(() => { this.render() });
+            return true;
         }
 
         onWindowResize(){
